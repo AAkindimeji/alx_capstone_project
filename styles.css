@@ -618,8 +618,44 @@ main {
       width: 90%; /* Adjust as needed */
   }
 
-  /* Adjust other styles for tablet screens */
+  .aboutme_details {
+    justify-content: right;
+    margin-left: 30rem;
+  }
+
+  .project1-header {
+    margin-left: 0rem;
+  }
+
+  .project1_details {
+    margin-left: 0rem;
+  }
+
+  .project2-header {
+    margin-right: 0rem;
+    margin-top: -30rem;
+    margin-left: 50rem;
+  }
+  
+  .project4-header {
+    margin-right: 0rem;
+
+    margin-left: 48rem;
+  }
+  
+  .project5-header {
+    margin-right: 0rem;
+
+    margin-left: 40rem;
+  }
+  
+.project2_details {
+  margin-right: 0rem;
 }
+
+  }
+
+  /* Adjust other styles for tablet screens */
 
 @media screen and (max-width: 600px) {
   .container {
