@@ -12,24 +12,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Form validation
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    let name = document.getElementById('name').value.trim();
+    let firstName = document.getElementById('first-name').value.trim();
+    let surname = document.getElementById('surname').value.trim();
     let email = document.getElementById('email').value.trim();
     let message = document.getElementById('message').value.trim();
 
-    if (name === '' || email === '' || message === '') {
+    if (firstName === '' || surname === '' || email === '' || message === '') {
         alert('Please fill in all fields');
         return;
     }
 
-    // You can add more advanced validation logic here for email format, etc.
+    // Email validation
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+    }
 
-    // If all fields are filled, you can submit the form via AJAX or perform other actions.
-    // For demonstration purposes, let's just log the form data.
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
-    // Reset the form
-    document.getElementById('contact-form').reset();
+    // Message length validation
+    if (message.split(' ').length > 300) {
+        alert('Message should not exceed 300 words');
+        return;
+    }
+
+    // Display thank you message and hide form
+    document.getElementById('thank-you-message').innerText = "Thanks for reaching out, we will get back to you soon.";
+    document.getElementById('contact-form').style.display = 'none';
+
 });
 
 // Add active class to the navigation item based on scroll position

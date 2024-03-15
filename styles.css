@@ -376,11 +376,11 @@ main {
         margin-left: 27%;
         font-size: 14px;
         word-wrap: break-word;
-        text-justify:distribute-all-lines;
+        text-justify:auto;
         font-style:oblique;
         margin-right: 15%;
         margin-top: -25rem;
-        margin-bottom: 10rem;
+        /* margin-bottom: 10rem; */
       }
     
       /* Skills list */
@@ -391,10 +391,9 @@ main {
         justify-content: center;
         /* margin-left: 25%; */
         /* word-wrap: break-word; */
-        margin-right: 8%;
         background-color: #e6e6e6;
         padding: 20px;
-        margin-top: 20px;
+        /* margin-top: 20px; */
         border-radius: 5px;
       }
 
@@ -440,7 +439,7 @@ main {
         gap: 20%;
         justify-content:center;
         align-items: center;
-        margin-left: 69rem;
+        margin-left: 67rem;
         margin-top: -37rem;
         word-wrap: break-word;
         margin-right: 10%;
@@ -452,7 +451,7 @@ main {
         gap: 20%;
         justify-content:center;
         align-items: center;
-        margin-left: 69rem;
+        margin-left: 67rem;
         margin-top: -3rem;
         word-wrap: break-word;
         margin-right: 15%;
@@ -480,6 +479,18 @@ main {
         margin-right:15%;
         margin-top: 1rem;
         margin-bottom: 5rem;
+      }
+      .project5-header {
+        display: flex;
+        flex-direction: row;
+        font-weight: bolder;
+        gap: 20%;
+        justify-content:center;
+        align-items: center;
+        margin-left: 62rem;
+        margin-top: -15rem;
+        word-wrap: break-word;
+        margin-right: 15%;
       }
 
   /* Contact section */
@@ -521,5 +532,43 @@ main {
 }
 
 .contact button:hover {
-  background-color: #003366;
+  background-color: #f33e07;
+}
+
+#thank-you-message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 25px;
+  color: #004080;
+}
+
+
+.footer {
+  --nav-item-font-weight: normal;
+  --nav-item-font-size: var(--font-size-small);
+  padding: var(--footer-padding);
+}
+
+.footer-copyright {
+  margin: 0;
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+}
+
+.footer ul {
+  text-align: left;
+}
+
+.footer-address {
+  color: var(--text-color);
+}
+
+.social-link {
+  display: block;
+}
+
+.social-link > svg {
+  fill: var(--text-color);
 }
