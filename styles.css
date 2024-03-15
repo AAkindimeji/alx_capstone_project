@@ -397,7 +397,13 @@ main {
         margin-right: 15%;
         margin-top: -25rem;
         /* margin-bottom: 10rem; */
+        transition: transform 0.5s ease-in-out; /* Smooth transition */
       }
+      /* Hover effect */
+      .aboutme_details:hover {
+        transform: scale(1.1); /* Scale up slightly on hover */
+      }
+
     
       /* Skills list */
       .skills-list {
@@ -606,171 +612,19 @@ main {
   fill: var(--text-color);
 }
 
-/* Tablet Screen */
-@media only screen and (max-width: 1024px) {
-  /* Global Styles */
-  body {
-    font-size: 16px; /* Adjust font size for better readability */
-  }
-  
-  /* Layout Styles */
+/* Media Queries for Tablet and Phone Screens */
+@media screen and (max-width: 1024px) {
   .container {
-    width: 90%; /* Adjust container width for better fit */
-    margin: 0 auto; /* Center align container */
+      width: 90%; /* Adjust as needed */
   }
 
-  /* Navbar Styles */
-  .navbar-menu {
-    margin-left: 0; /* Remove margin for better alignment */
-  }
-
-  /* Section Styles */
-  .section-title {
-    font-size: 4rem; /* Decrease section title font size for better fit */
-  }
-
-  /* About Me Section Styles */
-  .aboutme {
-    flex-direction: column; /* Change flex direction for better stacking on smaller screens */
-    margin-left: 0; /* Remove left margin for better alignment */
-  }
-
-  .aboutme_details {
-    margin-left: 0; /* Remove left margin for better alignment */
-    margin-right: 0; /* Remove right margin for better alignment */
-  }
-
-  /* Contact Section Styles */
-  .contact input[type="text"],
-  .contact input[type="email"],
-  .contact textarea {
-    width: 100%; /* Adjust input width for better fit */
-    margin-right: 0; /* Remove right margin for better alignment */
-  }
-
-  /* Button Styles */
-  .button {
-    margin-left: 0; /* Remove left margin for better alignment */
-    margin-top: 20px; /* Adjust top margin for better spacing */
-  }
+  /* Adjust other styles for tablet screens */
 }
 
-/* CSS for Tablets (min-width: 601px and max-width: 1024px) */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  /* Header Styles */
-  .header-full {
-      padding: 15px;
+@media screen and (max-width: 600px) {
+  .container {
+      width: 90%; /* Adjust as needed */
   }
-  
-  .header-full h1 {
-      font-size: 22px;
-  }
-  
-  /* Main Section Styles */
-  .main-section {
-      padding: 15px;
-  }
-  
-  .aboutme_details {
-      line-height: 1.5;
-  }
-  .headshot {
-    width: 200px; /* Adjust the width as needed */
-    height: 200px; /* Adjust the height as needed */
-    object-fit: cover; /* Optional: maintain aspect ratio and cover container */
-    border-radius: 50%; /* Optional: if you want a circular shape */
-  }
-  
-  /* Project Section Styles */
-  .projects {
-      padding: 15px;
-  }
-  
-  .project1-header, .project2-header, .project4-header, .project5-header {
-      margin-top: 15px;
-  }
-  
-  /* Contact Section Styles */
-  .contact {
-      padding: 15px;
-  }
-  
-  #contact-form input, #contact-form textarea {
-      padding: 8px;
-      margin-bottom: 8px;
-  }
-  
-  #contact-form button {
-      padding: 8px 16px;
-  }
-  
-  /* Footer Styles */
-  .footer {
-      padding: 15px;
-  }
-}
 
-/* CSS for Mobile Phones (max-width: 600px) */
-@media only screen and (max-width: 600px) {
-  /* Header Styles */
-  .header-full {
-      padding: 10px;
-  }
-  
-  .header-full h1 {
-      font-size: 20px;
-  }
-  
-  .nav ul li {
-      margin-right: 10px;
-  }
-  
-  .nav ul li a {
-      font-size: 16px;
-  }
-  
-  /* Main Section Styles */
-  .main-section {
-      padding: 10px;
-  }
-  
-  .aboutme_details {
-      line-height: 1.4;
-  }
-  
-  .skills-list {
-      margin-left: 10px;
-  }
-  
-  .skills-list li {
-      margin-bottom: 8px;
-  }
-  
-  /* Project Section Styles */
-  .projects {
-      padding: 10px;
-  }
-  
-  .project1-header, .project2-header, .project4-header, .project5-header {
-      margin-top: 10px;
-  }
-  
-  /* Contact Section Styles */
-  .contact {
-      padding: 10px;
-  }
-  
-  #contact-form input, #contact-form textarea {
-      padding: 6px;
-      margin-bottom: 6px;
-  }
-  
-  #contact-form button {
-      padding: 6px 12px;
-  }
-  
-  /* Footer Styles */
-  .footer {
-      padding: 10px;
-  }
+  /* Adjust other styles for phone screens */
 }
