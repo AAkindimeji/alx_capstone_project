@@ -1,46 +1,39 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-import pymysql  
+from models import Contact  # Import the Contact class
 
 app = Flask(__name__)
 
-# Configure SQLAlchemy database URI (change username, password, host, and database name)
+# Database configuration (replace with your details)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://learnakins:Akins@1234@127.0.0.1/contact'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Initialize SQLAlchemy
 db = SQLAlchemy(app)
 
-# Define the Contact model
-class Contact(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(50))
-    surname = db.Column(db.String(50))
-    email = db.Column(db.String(100))
-    message = db.Column(db.Text)
-
-# This can be moved outside the app context (e.g. before the first run)
-# db.create_all()  # Uncomment if you want to create tables on every run
-
-# Route for the home page
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html')  # Render the index template
 
-# Route to handle form submission
-@app.route('/submit_form', methods=['POST'])
+@app.route('/submit_form', methods=['POST'])  # Define route and methods
 def submit_form():
-    first_name = request.form['first_name']
-    surname = request.form['surname']
-    email = request.form['email']
-    message = request.form['message']
+    # Get data from the form
+    first_name = request.form.get('first-name')
+    surname = request.form.get('surname')
+    email = request.form.get('email')
+    message = request.form.get('message')
 
-    # Create a new Contact instance and add it to the database
+    # Create a Contact object
     contact = Contact(first_name=first_name, surname=surname, email=email, message=message)
+
+    # Add the contact to the database session
     db.session.add(contact)
+
+    # Save changes to the database
     db.session.commit()
 
-    # Redirect back to the home page (index.html)
-    return render_template('index.html', success_message="Your message has been submitted!")  # Optional flash message
+    # Render the index template with a success flag
+    return render_template('index.html', submitted=True)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    db.create_all()  # Create database tables if they don't exist (optional)
+    app.run(debug=True)

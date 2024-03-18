@@ -533,10 +533,18 @@ main {
       }
 
   /* Contact section */
-.contact {
-  background-color: #e6e6e6;
-  padding: 50px 20px;
-}
+
+  .contact {
+    background-color: #e6e6e6; /* Light gray background */
+    padding: 50px 20px;
+    transition: background-color 0.5s ease-in-out; /* Smooth background color transition */
+  }
+  
+  /* Hover effect */
+  .contact:hover {
+    background-color: #9b7e7ecb; /* Slightly darker gray on hover */
+  }
+  
 
 .contact h2 {
   color: #004080;
